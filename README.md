@@ -22,3 +22,6 @@ Funtionality to produce a list of entries.
 
 Need an API to perform CRUD operations on entries.
 Need Data Store to hold entries.
+
+First card:
+Create one endpoint to Add an entry. (Consideration for two endpoints - decision to have one based on anime and manga having many common properties)
