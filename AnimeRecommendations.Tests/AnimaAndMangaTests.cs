@@ -14,6 +14,7 @@ public class Tests
     [Test]
     public void create_anime_manga()
     { 
+        //200
         //arrange
         AnimeAndMangaController _sut = new AnimeAndMangaController();
        
@@ -24,4 +25,6 @@ public class Tests
         //assert 
         Assert.AreEqual(result.GetType(),typeof(OkResult));
     }
+    //400 validation
+    //404 incorrect endpoint , empty body , 2 parameters and only one provided 
 }
