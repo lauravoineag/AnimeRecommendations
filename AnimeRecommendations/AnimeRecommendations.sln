@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeRecommendations", "AnimeRecommendations\AnimeRecommendations.csproj", "{02227164-976B-46E8-A96E-094ED2DC6DA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeRecommendations.Tests", "..\AnimeRecommendations.Tests\AnimeRecommendations.Tests.csproj", "{3F5F02C4-D031-4C4E-8F46-E9DD004BBEEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02227164-976B-46E8-A96E-094ED2DC6DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02227164-976B-46E8-A96E-094ED2DC6DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02227164-976B-46E8-A96E-094ED2DC6DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02227164-976B-46E8-A96E-094ED2DC6DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5F02C4-D031-4C4E-8F46-E9DD004BBEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5F02C4-D031-4C4E-8F46-E9DD004BBEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5F02C4-D031-4C4E-8F46-E9DD004BBEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5F02C4-D031-4C4E-8F46-E9DD004BBEEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
