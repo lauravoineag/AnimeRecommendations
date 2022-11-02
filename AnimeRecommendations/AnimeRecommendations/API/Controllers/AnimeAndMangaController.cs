@@ -29,6 +29,11 @@ namespace AnimeRecommendations.Controllers
         [HttpPost(Name = "CreateAnimeManga")]
         public ActionResult Create([FromBody] string value)
         {
+            //if incoming data is not valid 
+            //return Bad Request
+            //call service to create new item 
+            //if service returns error
+            //return error 
             return Ok();
         }
 
