@@ -25,3 +25,12 @@ Need Data Store to hold entries.
 
 First card:
 Create one endpoint to Add an entry. (Consideration for two endpoints - decision to have one based on anime and manga having many common properties)
+First card:  
+27
+1. Create one endpoint to Add an entry. (Consideration for two endpoints - decision to have one based on anime and manga having many common properties) 
+   1. TDD
+   2. 200
+   3. 400 validation
+   4. 404 incorrect endpoint , empty body , 2 parameters and only one provided
+
+​
