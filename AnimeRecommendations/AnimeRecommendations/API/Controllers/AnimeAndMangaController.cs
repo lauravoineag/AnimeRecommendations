@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+
+using AnimeRecommendations.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnimeRecommendations.Controllers
@@ -25,12 +22,31 @@ namespace AnimeRecommendations.Controllers
             return "value";
         }
 
+        private bool ValidateEntry(AnimeManga animeManga)
+        {
+            if (string.IsNullOrWhiteSpace(animeManga.Title))
+            {
+                return false;
+            }
+
+            if (animeManga.IsHardcopy == false &&string.IsNullOrWhiteSpace( animeManga.Uri))
+            { return false;}
+            
+            return true;
+        }
+
         // POST: api/AnimeAndManga
         [HttpPost(Name = "CreateAnimeManga")]
-        public ActionResult Create([FromBody] string value)
+        public ActionResult Create([FromBody] AnimeManga animeManga)
         {
             //if incoming data is not valid 
             //return Bad Request
+            
+            if (ValidateEntry(animeManga) == false)
+            {
+                return BadRequest();
+            };
+            
             //call service to create new item 
             //if service returns error
             //return error 
