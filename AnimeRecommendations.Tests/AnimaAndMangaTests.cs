@@ -7,13 +7,14 @@ namespace AnimeRecommendations.Tests;
 
 public class Tests
 {
+
     [SetUp]
     public void Setup()
     { 
     }
 
     [Test]
-    public void create_anime_manga()
+    public void when_user_creates_anime_manga_return_ok()
     { 
         //200
         //arrange
@@ -21,14 +22,58 @@ public class Tests
         AnimeManga request = new AnimeManga();
         request.Title = "anime";
         request.IsHardcopy = true;
+        request.IsManga = false;
 
         //act 
         ActionResult result = _sut.Create(request);
         
         //assert 
-        Assert.AreEqual(result.GetType(),typeof(OkResult));
+        Assert.AreEqual(typeof(OkResult),result.GetType());
+    }
+
+    [Test]
+    public void when_user_creates_animeManga_item_and_IsManga_unknown_return_bad_request()
+    {
+        //arrange
+        AnimeAndMangaController _sut = new AnimeAndMangaController();
+        AnimeManga request = new AnimeManga();
+        request.Title = "anime";
+        request.IsHardcopy = true;
+        //act
+        ActionResult result = _sut.Create(request);
+        //assert
+        Assert.AreEqual(typeof(BadRequestResult),result.GetType());
+    }
+
+    [Test]
+    public void when_user_creates_animeManga_item_and_title_unknown_return_bad_request()
+    {
+        //arrange
+        AnimeAndMangaController _sut = new AnimeAndMangaController();
+        AnimeManga request = new AnimeManga();
+        request.IsManga = true;
+        request.IsHardcopy = true;
+        //act
+        ActionResult result = _sut.Create(request);
+        //assert
+        Assert.AreEqual(typeof(BadRequestResult),result.GetType());
     }
     
+    [Test]
+    public void when_user_creates_animeManga_item_with_no_hardcopy_and_no_uri_return_bad_request()
+    {
+        //arrange
+        AnimeAndMangaController _sut = new AnimeAndMangaController();
+        AnimeManga request = new AnimeManga();
+        request.IsManga = true;
+        request.IsHardcopy = false;
+        request.Title = "anime";
+        //act
+        ActionResult result = _sut.Create(request);
+        //assert
+        Assert.AreEqual(typeof(BadRequestResult),result.GetType());
+    }
+
     /*[Test]
     public void when_calling_create_and_no_data_is_passed_in()
     { 

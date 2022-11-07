@@ -2,13 +2,13 @@
 
 public class AnimeManga
 {
-    public bool IsManga { get;  set; }
+    public bool? IsManga { get;  set; }
     public bool IsHardcopy { get; set; }
     public string Uri { get; set; }
     public string Title { get; set; }
-    public Genre Genre { get; set; } 
-    public double Score { get; set; }
-    public Demographic Demographic { get; set; }
+    public Genre? Genre { get; set; } 
+    public double? Score { get; set; }
+    public Demographic? Demographic { get; set; }
 }
 
 public enum Genre

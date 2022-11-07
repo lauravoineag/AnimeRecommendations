@@ -22,18 +22,29 @@ namespace AnimeRecommendations.Controllers
             return "value";
         }
 
+        //Validation 
         private bool ValidateEntry(AnimeManga animeManga)
         {
+            //required validation
+            if (animeManga.IsManga.HasValue == false)
+            {
+                return false;
+                
+            }
+            
             if (string.IsNullOrWhiteSpace(animeManga.Title))
             {
                 return false;
             }
-
+            
             if (animeManga.IsHardcopy == false &&string.IsNullOrWhiteSpace( animeManga.Uri))
             { return false;}
             
+            
             return true;
+            //optional 
         }
+        //Compare Value
 
         // POST: api/AnimeAndManga
         [HttpPost(Name = "CreateAnimeManga")]
@@ -42,10 +53,10 @@ namespace AnimeRecommendations.Controllers
             //if incoming data is not valid 
             //return Bad Request
             
-            if (ValidateEntry(animeManga) == false)
+            if (ValidateEntry(animeManga) == false) 
             {
                 return BadRequest();
-            };
+            }
             
             //call service to create new item 
             //if service returns error
