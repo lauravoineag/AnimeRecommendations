@@ -2,7 +2,6 @@
 
 Feature Epic > BE tickets – user > sub tickets (tasks) – create user, add , user, delete
 
-Ticket 1  - Create user
 Validations:
 Mandatory:
 IsManga  Do we have a value? – nullable bool
@@ -13,5 +12,10 @@ Demographic(optional)
 Score(optional)
 
 
+Create user
+Step 1  - validate
+Step 2  - add new entry (use InMemoryCache)
+Step 3 -  return result of doing the above
+Step 4 Create Integration tests class
 
 //test endpoints 
