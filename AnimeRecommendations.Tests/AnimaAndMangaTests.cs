@@ -7,10 +7,14 @@ namespace AnimeRecommendations.Tests;
 
 public class Tests
 {
+    public AnimeManga request;
+    public AnimeAndMangaController _sut;
 
     [SetUp]
     public void Setup()
     { 
+       _sut = new AnimeAndMangaController();
+        request = new AnimeManga();
     }
 
     [Test]
@@ -18,8 +22,7 @@ public class Tests
     { 
         //200
         //arrange
-        AnimeAndMangaController _sut = new AnimeAndMangaController();
-        AnimeManga request = new AnimeManga();
+        
         request.Title = "anime";
         request.IsHardcopy = true;
         request.IsManga = false;
