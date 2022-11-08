@@ -7,28 +7,26 @@ namespace AnimeRecommendations.Tests;
 
 public class Tests
 {
-    public AnimeManga request;
-    public AnimeAndMangaController _sut;
+    private AnimeManga _request;
+    private AnimeAndMangaController _sut;
 
     [SetUp]
     public void Setup()
     { 
        _sut = new AnimeAndMangaController();
-        request = new AnimeManga();
+        _request = new AnimeManga();
     }
 
     [Test]
-    public void when_user_creates_anime_manga_return_ok()
-    { 
-        //200
+    public void when_user_creates_anime_manga_return_ok()      //200
+    {
         //arrange
-        
-        request.Title = "anime";
-        request.IsHardcopy = true;
-        request.IsManga = false;
+        _request.Title = "anime";
+        _request.IsHardcopy = true;
+        _request.IsManga = false;
 
         //act 
-        ActionResult result = _sut.Create(request);
+        ActionResult result = _sut.Create(_request);
         
         //assert 
         Assert.AreEqual(typeof(OkResult),result.GetType());
@@ -38,12 +36,10 @@ public class Tests
     public void when_user_creates_animeManga_item_and_IsManga_unknown_return_bad_request()
     {
         //arrange
-        AnimeAndMangaController _sut = new AnimeAndMangaController();
-        AnimeManga request = new AnimeManga();
-        request.Title = "anime";
-        request.IsHardcopy = true;
+        _request.Title = "anime";
+        _request.IsHardcopy = true;
         //act
-        ActionResult result = _sut.Create(request);
+        ActionResult result = _sut.Create(_request);
         //assert
         Assert.AreEqual(typeof(BadRequestResult),result.GetType());
     }
@@ -52,12 +48,10 @@ public class Tests
     public void when_user_creates_animeManga_item_and_title_unknown_return_bad_request()
     {
         //arrange
-        AnimeAndMangaController _sut = new AnimeAndMangaController();
-        AnimeManga request = new AnimeManga();
-        request.IsManga = true;
-        request.IsHardcopy = true;
+        _request.IsManga = true;
+        _request.IsHardcopy = true;
         //act
-        ActionResult result = _sut.Create(request);
+        ActionResult result = _sut.Create(_request);
         //assert
         Assert.AreEqual(typeof(BadRequestResult),result.GetType());
     }
@@ -66,13 +60,11 @@ public class Tests
     public void when_user_creates_animeManga_item_with_no_hardcopy_and_no_uri_return_bad_request()
     {
         //arrange
-        AnimeAndMangaController _sut = new AnimeAndMangaController();
-        AnimeManga request = new AnimeManga();
-        request.IsManga = true;
-        request.IsHardcopy = false;
-        request.Title = "anime";
+        _request.IsManga = true;
+        _request.IsHardcopy = false;
+        _request.Title = "anime";
         //act
-        ActionResult result = _sut.Create(request);
+        ActionResult result = _sut.Create(_request);
         //assert
         Assert.AreEqual(typeof(BadRequestResult),result.GetType());
     }

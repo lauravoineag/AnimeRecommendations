@@ -50,9 +50,7 @@ namespace AnimeRecommendations.Controllers
         [HttpPost(Name = "CreateAnimeManga")]
         public ActionResult Create([FromBody] AnimeManga animeManga)
         {
-            //if incoming data is not valid 
-            //return Bad Request
-            
+            //if incoming data is not valid return Bad Request
             if (ValidateEntry(animeManga) == false) 
             {
                 return BadRequest();
