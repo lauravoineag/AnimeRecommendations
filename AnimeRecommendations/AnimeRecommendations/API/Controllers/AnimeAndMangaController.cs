@@ -1,4 +1,5 @@
 
+using AnimeRecommendations.Domain.Handlers;
 using AnimeRecommendations.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,15 @@ namespace AnimeRecommendations.Controllers
     [ApiController]
     public class AnimeAndMangaController : ControllerBase
     {
+        private readonly IAnimeMangaHandler _animeMangaHandler;
+
+        public AnimeAndMangaController(IAnimeMangaHandler animeMangaHandler)
+        {
+            _animeMangaHandler = animeMangaHandler;
+        }
+        
+        
+        
         // GET: api/AnimeAndManga
         [HttpGet(Name = "GetAnimeManga")]
         public IEnumerable<string> Get()
@@ -57,6 +67,7 @@ namespace AnimeRecommendations.Controllers
             }
             
             //call service to create new item 
+            _animeMangaHandler.Add(animeManga);
             //if service returns error
             //return error 
             return Ok();

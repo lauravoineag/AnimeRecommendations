@@ -13,7 +13,7 @@ Score(optional)
 
 
 Create user
-Step 1  - validate
+Step 1  - validate (validate if properties null return bad request)
 Step 2  - add new entry (use InMemoryCache)
 Step 3 -  return result of doing the above
 Step 4 Create Integration tests class

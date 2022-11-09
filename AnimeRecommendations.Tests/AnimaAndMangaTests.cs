@@ -14,7 +14,7 @@ public class Tests
     public void Setup()
     { 
        _sut = new AnimeAndMangaController();
-        _request = new AnimeManga();
+       _request = new AnimeManga();
     }
 
     [Test]

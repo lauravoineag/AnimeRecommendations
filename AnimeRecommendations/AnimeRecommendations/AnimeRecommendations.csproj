@@ -13,7 +13,6 @@
 
     <ItemGroup>
       <Folder Include="Data" />
-      <Folder Include="Domain\Handlers" />
       <Folder Include="Domain\Interfaces" />
     </ItemGroup>
 
